@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Docker Build
+````shel
+docker build -f Dockerfile -t ng-env-runtime:0.0.0 .
+````
+
+## Docker Run
+````shel
+docker run -d --name teste01 -e NAME="Cliente Ananindeua" -e VERSION="1.0.1" -e ENV="Produção" -e API="sgi.detran.ananindeua.com" -e COLOR="red" -p 3001:80 '--restart=always' ng-env-runtime:latest
+````
